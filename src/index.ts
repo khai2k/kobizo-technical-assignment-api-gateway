@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
+import "./config/env";
 import rateLimit from "express-rate-limit";
-import dotenv from "dotenv";
 import { authRoutes } from "./routes/auth.routes";
 import { productRoutes } from "./routes/product.routes";
 import { checkoutRoutes } from "./routes/checkout.routes";
@@ -10,8 +10,6 @@ import { blogRoutes } from "./routes/blog.routes";
 import { errorHandler } from "./middleware/error.middleware";
 import { logger } from "./utils/logger";
 
-// Load environment variables
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
