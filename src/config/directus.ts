@@ -69,9 +69,7 @@ class DirectusService {
   }
 
   async ensureAuthenticated(): Promise<void> {
-    if (!this.isAuthenticated) {
       await this.authenticate();
-    }
   }
 
   async loginUser(email: string, password: string): Promise<any> {
